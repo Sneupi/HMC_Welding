@@ -1,10 +1,10 @@
 #include <Arduino.h>
+#include <SPI.h>
 
-void setup() {
-  Serial.begin(9600);
-  Serial.println("Hello World");
-}
+// #define TRANSMITTER // Else, RECEIVER
 
-void loop() {
-  // *crickets*
-}
+#ifdef TRANSMITTER
+#include "tx.hpp"
+#else
+#include "rx.hpp"
+#endif
