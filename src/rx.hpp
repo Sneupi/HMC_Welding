@@ -19,7 +19,7 @@ byte pot;
 
 void resetData()
 {
-    pot = 1;
+    pot = 0;
 }
 
 void setup()
@@ -50,6 +50,8 @@ void loop()
         radio.read(&pot, sizeof(byte));
         lastReceiveTime = millis();
     }
+    // Update Relay & Servo
+    //TODO
     // Debug
     Serial.println(pot);
 }
