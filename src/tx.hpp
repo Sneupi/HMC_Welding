@@ -8,12 +8,12 @@ DIY Arduino based RC Transmitter
 #include "config.h"
 
 #define BAUD 9600
-#define CE 9
-#define CSN 10
+#define CE 8
+#define CSN 7
 #define LOWV 3.0
 #define VDIV 2.0 // 1/n divider
-#define LED 7
-#define BATT A7
+#define LED 2
+#define BATT A0
 #define POT A1
 
 RF24 radio(CE, CSN); // nRF24L01 (CE, CSN)
