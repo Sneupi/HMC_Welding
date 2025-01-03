@@ -44,7 +44,7 @@ void setup()
     pinMode(RELAY, OUTPUT); // init relay
 
     radio.begin();
-    radio.openReadingPipe(0, ADDRESS1);
+    radio.openReadingPipe(0, ADDRESS2);
     radio.setAutoAck(false);
     radio.setDataRate(RF24_250KBPS);
     radio.setPALevel(RF24_PA_LOW);
