@@ -1,10 +1,14 @@
 #include <Arduino.h>
 #include <SPI.h>
 
-// #define TRANSMITTER // Else, RECEIVER
+#define RX
 
-#ifdef TRANSMITTER
+#if defined(TX)
 #include "tx.hpp"
-#else
+#elif defined(RX)
 #include "rx.hpp"
+#elif defined(CTRL)
+#include "ctrl.hpp"
+#else
+#error "Please define a role: TX, RX or CTRL"
 #endif
