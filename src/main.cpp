@@ -1,10 +1,14 @@
 #include <Arduino.h>
+#include <SPI.h>
 
-void setup() {
-  Serial.begin(9600);
-  Serial.println("Hello World");
-}
+#define RX
 
-void loop() {
-  // *crickets*
-}
+#if defined(TX)
+#include "tx.hpp"
+#elif defined(RX)
+#include "rx.hpp"
+#elif defined(CTRL)
+#include "ctrl.hpp"
+#else
+#error "Please define a role: TX, RX or CTRL"
+#endif
